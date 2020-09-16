@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<!--    mencoba mereturn data-->
+{% for image in images %}
+    {{image|safe}}
+<!--    gunakan 'safe' untuk merenter respon html di jinja-->
+    <a href="{{ image.find('a')['href']|safe }}">{{ image.find('a').find('img')['title'] }}</a>
+{%endfor%}
+{% endblock %}
